@@ -3,6 +3,14 @@ pipeline{
 
    stages
   {
+        stage('checking out code ')
+      {
+          steps
+          {
+           sh  'checkout scm'
+          }
+       }
+   
       stage('Running Test')
       {
           steps
@@ -10,5 +18,6 @@ pipeline{
            sh  'mvn -f mavenjenk/pom.xml clean test'
           }
        }
+   
 }
 }
