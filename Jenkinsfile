@@ -13,7 +13,13 @@ pipeline{
           }
        }
       
-     
+     stage('Junit test result')
+      {
+          steps
+          {
+              junit '*/**/*.xml'
+          }
+      }
    
 }
 }
