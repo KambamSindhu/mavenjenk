@@ -7,7 +7,7 @@ pipeline{
       {
           steps
           {
-           sh  'mvn clean test'
+           sh  'mvn -f mavenjenk/pom.xml clean test'
           }
        }
 }
