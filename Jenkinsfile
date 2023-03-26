@@ -1,16 +1,14 @@
-node('master')
-{
-  stage("code build")
+pipeline{
+    agent any
+
+   stages
   {
-    sh 'mvn clean install'
-  }
-  stage("unit test execution")
-  {
-    sh 'mvn test'
-  }
-  stage("junit test result")
-  {
-    junit '*/**/*.xml'
-  }
+      stage('Running Test')
+      {
+          steps
+          {
+            bat label: '',script: 'mvn clean test'
+          }
+       }
 }
-  
+}
