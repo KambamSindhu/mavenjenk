@@ -7,7 +7,7 @@ pipeline{
       {
           steps
           {
-            bat label: '',script: 'mvn clean test'
+           sh  'mvn clean test'
           }
        }
 }
